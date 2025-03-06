@@ -5,7 +5,7 @@
 
 Collection of scripts and data for the **DMaVR** class
 
-**Valid (2025-02-19)
+**Valid (2025-03-06)
 [Datacamp](https://www.datacamp.com/groups/shared_links/ccc4fb8cd007ffd95abe048c5325c5f2138f02ca0c13e1aa16ad6c077e532fdd)
 invite link**
 
@@ -27,7 +27,7 @@ require(curl)
 dir.create(path = "./data/",
            showWarnings = FALSE,
            recursive = TRUE)
-curl_download(url = "https://github.com/strnda/DMaVR/archive/refs/heads/main.zip", 
+curl_download(url = "https://github.com/strnda/PED/archive/refs/heads/main.zip", 
               destfile = "./data/test.zip")
 
 ## unzip the archive
@@ -42,7 +42,7 @@ Or manualy download the archive… ![](figs/download.png)
 
 ``` bash
 ## using bash (git) commands
-git clone https://github.com/strnda/DMaVR.git
+git clone https://github.com/strnda/PED.git
 
 ## or with ssh
 git@github.com:strnda/DMaVR.git
