@@ -65,7 +65,11 @@ Or clone it manually via Rstudio ide interface: navigate to "New Project" > "Ver
 
 - In the **R** folder you can find important scripts named in logical order (1 - data import, 2 - basic data analysis, etc...)    
 - **cheatshees** folder contains cheat sheets that can be useful in your future endeavors
- 
+
 # Data for the **DMaVR** class
 
 data source can be found [here](https://gdex.ucar.edu/dataset/camels/file.html)
+
+# Assignments
+
+Assignments can be found in the repo [wiki](https://github.com/strnda/DMaVR/wiki)

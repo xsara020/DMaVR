@@ -63,3 +63,8 @@ Project” \> “Version Control” \> “git” and paste the repo URL
 
 data source can be found
 [here](https://gdex.ucar.edu/dataset/camels/file.html)
+
+# Assignments
+
+Assignments can be found in the repo
+[wiki](https://github.com/strnda/DMaVR/wiki)
