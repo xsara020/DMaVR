@@ -1,18 +1,16 @@
-setwd("C:/Users/simca/Documents/czu/R/assignments/1")
-
+#saves users current directory
 current_dir <- getwd()
+
+#download the file
 download.file("https://gdex.ucar.edu/dataset/camels/file/basin_timeseries_v1p2_modelOutput_daymet.zip",
              destfile = paste0(current_dir, "/basin_timeseries_v1p2_modelOutput_daymet.zip"))
 
-#unzip the downloaded folder
+#unzip the downloaded folder and check if it is really downloaded
 if(file.exists('basin_timeseries_v1p2_modelOutput_daymet.zip')){
   unzip('basin_timeseries_v1p2_modelOutput_daymet.zip')
 } else{
   print("File didn't download!")
 }
-
-#save path where the model output files are stored
-#path <- "C:/Users/simca/Documents/czu/R/assignments/1/model_output_daymet/model_output/flow_timeseries/daymet/"
 
 #set working directory to that path
 setwd(paste0(current_dir, "/model_output_daymet/model_output/flow_timeseries/daymet/"))
@@ -42,4 +40,5 @@ for(i in folders){
 
 #Summary:
 #My approach was to loop through all the folders and search for files that contains "model_output" in their name
-#I didn't face much challenges. I only didn't know how grepl function worked and how to get the matching files.
+#I didn't face much challenges. Only during the downloading of the file a timeout of 60sec was reached.
+#Szo I used options(timeout = 1000) in the console and everything worked great
