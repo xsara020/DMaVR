@@ -66,6 +66,6 @@ data source can be found
 
 # Class Evaluation    
 
-In order to pass the class you have to submit at least three out of four assingments in form of a working and well commented script.  
+In order to pass the class you have to submit at least **three** out of four assingments in form of a working and well commented script.  
 The assignments and a guide on how to upload them can be found in the repo
 [wiki](https://github.com/strnda/DMaVR/wiki)
