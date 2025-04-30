@@ -1,0 +1,28 @@
+library(ggplot2)
+library(plotly)
+set.seed(321)
+
+# Task 1: Time series plot
+basin_data[, Date := as.Date(paste0(water_year, "-", Month, "-01"))]
+threshold_val <- quantile(basin_data$streamflow, 0.95, na.rm = TRUE)
+basin_data[, extreme_event := streamflow >= threshold_val]
+
+plot_obj <- ggplot(basin_data, aes(x = Date, y = streamflow)) +
+  geom_line(color = "navy", linewidth = 0.3) +
+  geom_point(data = basin_data[extreme_event == TRUE],
+             aes(color = "Extreme"), shape = 17, size = 2) +
+  facet_wrap(~ BasinID, scales = "free_y") +
+  labs(title = "Streamflow Time Series with Extreme Events Highlighted")
+
+interactive_plot <- ggplotly(plot_obj)
+
+# Task 4: Snowmelt analysis
+max_swe <- basin_data[, .(max_SWE = max(snow_water, na.rm = TRUE)), by = .(water_year, BasinID)]
+basin_data <- merge(basin_data, max_swe, by = c("water_year", "BasinID"))
+basin_data[, snowmelt := max_SWE - snow_water]
+
+# Task 5: Water balance
+basin_data[, WB := precipitation - evapotranspiration]
+basin_data[, Season := fifelse(Month %in% c(12, 1, 2), "Winter",
+                               fifelse(Month %in% c(3, 4, 5), "Spring",
+                                       fifelse(Month %in% c(6, 7, 8), "Summer", "Autumn")))]
